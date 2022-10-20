@@ -18,11 +18,14 @@ for i in range(6,16):
     A = np.array([[1, 1], [10**(-k), 0],[0, 10**(-k)]])
     b = np.array([-(10**(-k)), 1+10**(-k),1-10**(-k)])
     print("k = ", i)
-    print("QR: ", solveQR(i,A,b))
+    print("Solution using QR: ", solveQR(i,A,b))
 
 for i in range(6,16):
     k=i
     A = np.array([[1, 1], [10**(-k), 0],[0, 10**(-k)]])
     b = np.array([-(10**(-k)), 1+10**(-k),1-10**(-k)])
     print("k = ", i)
-    print("Normal: ", solveNormal(i,A,b))
+    try:
+        print("Solution using Normal: ", solveNormal(i,A,b))
+    except:
+        print("Error Singular Matrix")

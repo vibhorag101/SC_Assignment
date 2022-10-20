@@ -23,7 +23,7 @@ xNPLS = np.linalg.lstsq(A, solY, rcond=None)[0]
 
 lineNPLS = xNPLS[1]*t+xNPLS[0]
 
-errorNP = np.linalg.norm(Atb - np.matmul(AtA, x))
+errorNP = np.linalg.norm(solY - np.matmul(A, x))
 errorNPLS = np.linalg.norm(solY - np.matmul(A, xNPLS))
 
 print("Error using np.linalg.solve: ", errorNP)
