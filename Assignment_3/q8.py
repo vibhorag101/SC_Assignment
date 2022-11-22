@@ -21,16 +21,21 @@ def RayleighQuotientIteration(A,trueEigen):
 
         k = k+1
     r = math.log(e2/e1)/math.log(e1*e0)
-    return smallestEigen,x,r
+    return x,smallestEigen,r
 
-def eigenNumpy():
-    A = np.array([[2,3,2],[10,3,4],[3,6,1]])
+def eigenNumpy(A):
     return np.linalg.eig(A)
 
-reqEigen = np.amin(np.abs(eigenNumpy()[0]))
-print("The required eigen value magnitude is :",reqEigen)
 A = np.array([[2,3,2],[10,3,4],[3,6,1]])
+
+reqEigen = np.amin(np.abs(eigenNumpy(A)[0]))
+
 foundEigen = RayleighQuotientIteration(A,reqEigen)
-print("The smallest magnitude eigenvalue is :",foundEigen[0])
-print("The corresponding eigenvector is :",foundEigen[1])
+print("The smallest magnitude eigenvalue is :",foundEigen[1])
+print("The corresponding eigenvector is :",foundEigen[0])
 print("The convergence rate is : ",foundEigen[2])
+
+numpyRes = eigenNumpy(A)
+print("Numpy eigenvalues and eigenvectors :")
+print("The eigenvalues are ", numpyRes[0])
+print("The corresponding eigenvector columns are \n", numpyRes[1])
