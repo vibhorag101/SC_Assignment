@@ -28,10 +28,11 @@ def eigenNumpy(A):
 
 A = np.array([[2,3,2],[10,3,4],[3,6,1]])
 
-reqEigen = np.amin(np.abs(eigenNumpy(A)[0]))
+reqEigen = np.amax(np.abs(eigenNumpy(A)[0]))
 
 foundEigen = RayleighQuotientIteration(A,reqEigen)
-print("The smallest magnitude eigenvalue is :",foundEigen[1])
+print("Rayleigh Quotient Iteration :")
+print("The found eigenvalue is :",foundEigen[1])
 print("The corresponding eigenvector is :",foundEigen[0])
 print("The convergence rate is : ",foundEigen[2])
 

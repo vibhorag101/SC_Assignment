@@ -19,7 +19,7 @@ print("For matrix in Q6 :")
 print("Eigen values using QR Iteration : ",np.diag(QRIteration(A)))
 print("Eigen values using numpy : ",eigenNumpy(A)[0])
 
-A = np.array([[2,3,2],[10,3,4],[3,6,1]])
+A = np.array([[6,2,1],[2,3,1],[1,1,1]])
 print("For matrix in Q7 :")
 print("Eigen values using QR Iteration : ",np.diag(QRIteration(A)))
 print("Eigen values using numpy : ",eigenNumpy(A)[0])
