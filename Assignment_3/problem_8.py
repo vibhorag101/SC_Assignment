@@ -8,6 +8,9 @@ def RayleighQuotientIteration(A,trueEigen):
     sigma = 0
     while(k<10000):
         sigma = np.matmul(np.transpose(x),np.matmul(A,x))/np.matmul(np.transpose(x),x)
+        if(np.linalg.det(A-sigma*np.identity(3))==0):
+            k+=1
+            continue
         y = np.linalg.solve(A-sigma*np.identity(3),x)
         x = y/np.linalg.norm(y,np.inf)
         smallestEigen = np.linalg.norm(y,np.inf)
@@ -20,7 +23,7 @@ def RayleighQuotientIteration(A,trueEigen):
             e2 = abs(abs(smallestEigen)-trueEigen)
 
         k = k+1
-    r = math.log(e2/e1)/math.log(e1*e0)
+    r = math.log(e2/e1)/math.log(e1/e0)
     return x,smallestEigen,r
 
 def eigenNumpy(A):

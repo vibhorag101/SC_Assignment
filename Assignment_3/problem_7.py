@@ -13,7 +13,7 @@ def shiftedInverseIteration(A,shift):
     return x,smallestEigen
 
 def eigenNumpy(A):
-    return np.linalg.eig(A)
+    return np.linalg.eigh(A)
 
 A = np.array([[6,2,1],[2,3,1],[1,1,1]])
 
