@@ -27,8 +27,7 @@ if __name__=='__main__':
     x11 = np.linspace(-1,1,11)
     y11 = [ runge(x) for x in x11 ]
     c11 = polynomialInterpolate(x11,y11)
-    yInterp11 = [ polynomialEval(c11,x) for x in x11 ]
-    x21 = np.linspace(-1,1,11)
+    x21 = np.linspace(-1,1,21)
     y21 = [ runge(x) for x in x21 ]
     c21 = polynomialInterpolate(x21,y21)
     yInterp11 = [ polynomialEval(c11,x) for x in x11 ]
