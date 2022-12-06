@@ -32,15 +32,15 @@ if __name__=='__main__':
     x21 = np.linspace(-1,1,21)
     y21 = [ runge(x) for x in x21 ]
     c21 = polynomialInterpolate(x21,y21)
-    yInterp11 = [ polynomialEval(c11,x) for x in x11 ]
-    yInterp21 = [ polynomialEval(c21,x) for x in x21 ]
+    yInterp11 = [ polynomialEval(c11,x) for x in x ]
+    yInterp21 = [ polynomialEval(c21,x) for x in x ]
     plt.title('Runge Function Polynomial Interpolation n=11')
     plt.plot(x,y,label='Runge Function, n=11',color='red')
-    plt.plot(x11,yInterp11,label='Interpolated Runge Function , n=11',color='blue',linestyle='dashed')
+    plt.plot(x,yInterp11,label='Interpolated Runge Function , n=11',color='blue',linestyle='dashed')
     plt.show()
     plt.title('Runge Function Polynomial Interpolation n=21')
     plt.plot(x,y,label='Runge Function, n=21',color='green')
-    plt.plot(x21,yInterp21,label='Interpolated Runge Function , n=21',color='blue',linestyle='--')
+    plt.plot(x,yInterp21,label='Interpolated Runge Function , n=21',color='blue',linestyle='--')
     plt.legend()
     plt.show()
 
