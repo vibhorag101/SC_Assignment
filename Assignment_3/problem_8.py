@@ -3,7 +3,7 @@ import math
 def RayleighQuotientIteration(A,trueEigen):
     k =0
     e0,e1,e2 = 0,0,0
-    x = np.array([0,0,1])
+    x = np.random.rand(A.shape[0])
     smallestEigen = 0
     sigma = 0
     while(k<10000):
@@ -15,11 +15,11 @@ def RayleighQuotientIteration(A,trueEigen):
         x = y/np.linalg.norm(y,np.inf)
         smallestEigen = np.linalg.norm(y,np.inf)
         smallestEigen = 1/smallestEigen + sigma
-        if(k==0):
+        if(k==1):
             e0 = abs(abs(smallestEigen)-trueEigen)
-        elif(k==1):
-            e1 = abs(abs(smallestEigen)-trueEigen)
         elif(k==2):
+            e1 = abs(abs(smallestEigen)-trueEigen)
+        elif(k==3):
             e2 = abs(abs(smallestEigen)-trueEigen)
 
         k = k+1
