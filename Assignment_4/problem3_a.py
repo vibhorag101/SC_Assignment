@@ -24,6 +24,8 @@ def polynomialEval(c,x):
     return y
 
 if __name__=='__main__':
+    x = np.linspace(-1,1,1000)
+    y = [ runge(x) for x in x ]
     x11 = np.linspace(-1,1,11)
     y11 = [ runge(x) for x in x11 ]
     c11 = polynomialInterpolate(x11,y11)
@@ -32,12 +34,13 @@ if __name__=='__main__':
     c21 = polynomialInterpolate(x21,y21)
     yInterp11 = [ polynomialEval(c11,x) for x in x11 ]
     yInterp21 = [ polynomialEval(c21,x) for x in x21 ]
-    plt.title('Runge Function Polynomial Interpolation')
-    plt.plot(x11,y11,label='Runge Function, n=11',color='red')
+    plt.title('Runge Function Polynomial Interpolation n=11')
+    plt.plot(x,y,label='Runge Function, n=11',color='red')
     plt.plot(x11,yInterp11,label='Interpolated Runge Function , n=11',color='blue',linestyle='dashed')
     plt.show()
-    plt.plot(x21,y21,label='Runge Function, n=21',color='green')
-    plt.plot(x21,yInterp21,label='Interpolated Runge Function , n=21',color='yellow',linestyle='--')
+    plt.title('Runge Function Polynomial Interpolation n=21')
+    plt.plot(x,y,label='Runge Function, n=21',color='green')
+    plt.plot(x21,yInterp21,label='Interpolated Runge Function , n=21',color='blue',linestyle='--')
     plt.legend()
     plt.show()
 
