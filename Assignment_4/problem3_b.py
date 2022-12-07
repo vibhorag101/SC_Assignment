@@ -79,7 +79,6 @@ if __name__=='__main__':
     x11 = np.linspace(-1,1,11)
     y11 = [ runge(x) for x in x11 ]
     c11 = cubicSplineInterpolate(x11,y11,11)
-    print(c11)
     x21 = np.linspace(-1,1,21)
     y21 = [ runge(x) for x in x21 ]
     c21 = cubicSplineInterpolate(x21,y21,21)
