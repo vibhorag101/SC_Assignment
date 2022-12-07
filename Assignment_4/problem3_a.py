@@ -37,6 +37,7 @@ if __name__=='__main__':
     plt.title('Runge Function Polynomial Interpolation n=11')
     plt.plot(x,y,label='Runge Function, n=11',color='red')
     plt.plot(x,yInterp11,label='Interpolated Runge Function , n=11',color='blue',linestyle='dashed')
+    plt.legend()
     plt.show()
     plt.title('Runge Function Polynomial Interpolation n=21')
     plt.plot(x,y,label='Runge Function, n=21',color='green')
