@@ -16,6 +16,7 @@ def denoising(lam,col):
     A = np.identity(1000) + lam * np.matmul(D.T, D)
     b = x_noisy
     x = np.linalg.lstsq(A, b, rcond=None)[0]
+    # x= np.linalg.solve(A, b)
     plotSignal(x, lam,color[col])
 
 plt.figure()

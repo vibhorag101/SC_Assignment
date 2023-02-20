@@ -11,8 +11,8 @@ def function(x):
 def limitChangeX(a, b):
     x1 = 1/(3**0.5)
     x2 = -1*x1
-    xChange1 = ((b-a)*x1 - 1 - (b*-1))/2
-    xChange2 = ((b-a)*x2 - 1 - (b*-1))/2
+    xChange1 = ((b-a)*x1 +a - (b*-1))/2
+    xChange2 = ((b-a)*x2 +a - (b*-1))/2
     return(function(xChange1) + function(xChange2))*((b-a)/2)   
 
 interpolatedValues = []

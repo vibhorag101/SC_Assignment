@@ -21,16 +21,16 @@ def forwardDifferential(x, h):
     return((function(x+h) - function(x))/h)
 
 for h in hvalues:
-    relativeError.append(math.log10(abs((forwardDifferential(1, h) - exactDifferential(1))/exactDifferential(1))))
+    relativeError.append(math.log10(abs((forwardDifferential(1, h) - exactDifferential(1)))))
 
 hvalues = [ math.log10(h) for h in hvalues ]
 table = []
 for i in range(len(hvalues)):
     table.append([hvalues[i], relativeError[i]])
-print(tabulate(table, headers=['log(h)', 'log(relative error)'], tablefmt= 'fancy_grid'))
+print(tabulate(table, headers=['log(h)', 'log(absolute error)'], tablefmt= 'fancy_grid'))
 plt.plot(hvalues, relativeError)
 plt.xlabel('h')
-plt.ylabel('Relative Error')
-plt.title('log Relative Error vs. log h')
+plt.ylabel('Absolute Error')
+plt.title('log Absolute Error vs. log h')
 plt.show()
 

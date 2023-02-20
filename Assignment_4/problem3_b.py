@@ -84,13 +84,15 @@ if __name__=='__main__':
     c21 = cubicSplineInterpolate(x21,y21,21)
     yInterp11 = evaluateCubic(x,c11,x11,11)
     yInterp21 = evaluateCubic(x,c21,x21,21)
-    plt.title('Runge Function Polynomial Interpolation n=11')
+    plt.title('Runge Function Cubic Spline Interpolation n=11')
     plt.plot(x,y,label='Runge Function, n=11',color='red')
     plt.plot(x,yInterp11,label='Interpolated Runge Function , n=11',color='blue',linestyle='dashed')
+    plt.legend()
     plt.show()
-    plt.title('Runge Function Polynomial Interpolation n=21')
+    plt.title('Runge Function Cubic Spline Interpolation n=21')
     plt.plot(x,y,label='Runge Function, n=21',color='green')
     plt.plot(x,yInterp21,label='Interpolated Runge Function , n=21',color='blue',linestyle='--')
+    plt.legend()
     plt.show()
 
 
